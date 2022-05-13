@@ -1,18 +1,12 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val ktorVersion: String by project
-val logbackVersion: String by project
-val serializationVersionCore: String by project
-
-
 plugins {
-    application
-    kotlin("jvm")
     id("org.springframework.boot") version "2.6.7"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
+    kotlin("jvm")
     kotlin("plugin.spring") version "1.6.21"
 }
-
+//
 //group = "ru.nino"
 //version = "0.0.1-SNAPSHOT"
 //java.sourceCompatibility = JavaVersion.VERSION_17
