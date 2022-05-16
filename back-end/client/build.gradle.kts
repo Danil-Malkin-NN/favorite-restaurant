@@ -1,9 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val ktorVersion: String by project
-val logbackVersion: String by project
-val serializationVersionCore: String by project
-
 
 plugins {
     application
@@ -13,13 +9,37 @@ plugins {
     kotlin("plugin.spring") version "1.6.21"
 }
 
-//group = "ru.nino"
-//version = "0.0.1-SNAPSHOT"
-//java.sourceCompatibility = JavaVersion.VERSION_17
+java.sourceCompatibility = JavaVersion.VERSION_17
+java.targetCompatibility = JavaVersion.VERSION_17
 
 repositories {
     mavenCentral()
 }
+
+application {
+    applicationName = "client-$version"
+    mainClass.set("ru.nino.client.ClientApplicationKt")
+}
+
+//tasks.jar {
+//    manifest {
+//        attributes["Main-Class"] = "ru.nino.client.ClientApplicationKt"
+//    }
+//}
+
+//    from {
+//        configurations.implementation.collect {
+//            it.isDirectory() ? it : zipTree(it)
+//        }
+
+
+
+//tasks.withType<Jar> {
+//    manifest {
+//        attributes["Main-Class"] = "ru.nino.client.ClientApplication"
+//    }
+//}
+
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
@@ -42,7 +62,12 @@ tasks.withType<KotlinCompile> {
         jvmTarget = "17"
     }
 }
-
-tasks.withType<Test> {
-    useJUnitPlatform()
-}
+//
+//tasks.withType<Test> {
+//    useJUnitPlatform()
+//    org.jetbrains.kotlin.gradle.plugin.KotlinPlatformType.jvm
+//
+//    javaVersion = "17"
+//
+//
+//}

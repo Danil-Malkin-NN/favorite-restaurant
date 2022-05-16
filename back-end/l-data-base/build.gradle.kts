@@ -5,11 +5,11 @@ plugins {
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
     kotlin("jvm")
     kotlin("plugin.spring") version "1.6.21"
+
 }
-//
-//group = "ru.nino"
-//version = "0.0.1-SNAPSHOT"
-//java.sourceCompatibility = JavaVersion.VERSION_17
+
+java.sourceCompatibility = JavaVersion.VERSION_17
+java.targetCompatibility = JavaVersion.VERSION_17
 
 repositories {
     mavenCentral()
@@ -30,6 +30,13 @@ tasks.withType<KotlinCompile> {
     }
 }
 
+tasks.jar {
+    manifest {
+        attributes["Main-Class"] = "com.mkyong.DateUtils"
+    }
+}
+
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+
