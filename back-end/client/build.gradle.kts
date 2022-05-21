@@ -34,6 +34,10 @@ dependencies {
     implementation(project(":l-data-base"))
     implementation("org.postgresql:postgresql:42.3.5")
 
+//    swagger
+    implementation("org.springdoc:springdoc-openapi-data-rest:1.6.8")
+    implementation("org.springdoc:springdoc-openapi-ui:1.6.8")
+    implementation("org.springdoc:springdoc-openapi-kotlin:1.6.8")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
