@@ -3,11 +3,12 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     application
-    kotlin("jvm")
+    kotlin("jvm") version "1.6.21"
     id("org.springframework.boot") version "2.6.7"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
     kotlin("plugin.spring") version "1.6.21"
 }
+
 
 java.sourceCompatibility = JavaVersion.VERSION_17
 java.targetCompatibility = JavaVersion.VERSION_17
@@ -16,30 +17,12 @@ repositories {
     mavenCentral()
 }
 
+
 application {
-    applicationName = "client-$version"
+    applicationName = "client-docker"
+    base.archivesName.set("client.app")
     mainClass.set("ru.nino.client.ClientApplicationKt")
 }
-
-//tasks.jar {
-//    manifest {
-//        attributes["Main-Class"] = "ru.nino.client.ClientApplicationKt"
-//    }
-//}
-
-//    from {
-//        configurations.implementation.collect {
-//            it.isDirectory() ? it : zipTree(it)
-//        }
-
-
-
-//tasks.withType<Jar> {
-//    manifest {
-//        attributes["Main-Class"] = "ru.nino.client.ClientApplication"
-//    }
-//}
-
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
@@ -56,12 +39,12 @@ dependencies {
 
 }
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions {
-        freeCompilerArgs = listOf("-Xjsr305=strict")
-        jvmTarget = "17"
-    }
-}
+//tasks.withType<KotlinCompile> {
+//    kotlinOptions {
+//        freeCompilerArgs = listOf("-Xjsr305=strict")
+//        jvmTarget = "17"
+//    }
+//}
 //
 //tasks.withType<Test> {
 //    useJUnitPlatform()

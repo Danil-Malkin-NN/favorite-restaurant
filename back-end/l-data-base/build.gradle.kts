@@ -1,9 +1,10 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.storage.CacheResetOnProcessCanceled.enabled
 
 plugins {
     id("org.springframework.boot") version "2.6.7"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
-    kotlin("jvm")
+    kotlin("jvm") version "1.6.21"
     kotlin("plugin.spring") version "1.6.21"
 
 }
@@ -20,23 +21,8 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-
 }
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions {
-        freeCompilerArgs = listOf("-Xjsr305=strict")
-        jvmTarget = "17"
-    }
-}
+val bootJar: org.springframework.boot.gradle.tasks.bundling.BootJar by tasks
 
-tasks.jar {
-    manifest {
-        attributes["Main-Class"] = "com.mkyong.DateUtils"
-    }
-}
-
-tasks.withType<Test> {
-    useJUnitPlatform()
-}
-
+bootJar.enabled = false
