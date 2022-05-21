@@ -1,7 +1,5 @@
 package ru.nino.client.controller
 
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.data.jpa.domain.AbstractPersistable_.id
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
@@ -9,14 +7,12 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestParam
 import ru.nino.client.entity.AbsId
 import ru.nino.client.repository.AbsRepository
-import kotlin.reflect.full.createInstance
 
 abstract class AbsController<
         E : AbsId,
         R : AbsRepository<E>>(
     private val repository: R
 ) {
-
 
     abstract fun test(): E
 
@@ -38,8 +34,5 @@ abstract class AbsController<
         } catch (e: Exception) {
             false
         }
-
     }
-
-
 }

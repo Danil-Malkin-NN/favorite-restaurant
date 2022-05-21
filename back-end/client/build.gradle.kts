@@ -1,24 +1,27 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val ktorVersion: String by project
-val logbackVersion: String by project
-val serializationVersionCore: String by project
-
 
 plugins {
     application
-    kotlin("jvm")
+    kotlin("jvm") version "1.6.21"
     id("org.springframework.boot") version "2.6.7"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
     kotlin("plugin.spring") version "1.6.21"
 }
 
-//group = "ru.nino"
-//version = "0.0.1-SNAPSHOT"
-//java.sourceCompatibility = JavaVersion.VERSION_17
+
+java.sourceCompatibility = JavaVersion.VERSION_17
+java.targetCompatibility = JavaVersion.VERSION_17
 
 repositories {
     mavenCentral()
+}
+
+
+application {
+    applicationName = "client-docker"
+    base.archivesName.set("client.app")
+    mainClass.set("ru.nino.client.ClientApplicationKt")
 }
 
 dependencies {
@@ -36,13 +39,18 @@ dependencies {
 
 }
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions {
-        freeCompilerArgs = listOf("-Xjsr305=strict")
-        jvmTarget = "17"
-    }
-}
-
-tasks.withType<Test> {
-    useJUnitPlatform()
-}
+//tasks.withType<KotlinCompile> {
+//    kotlinOptions {
+//        freeCompilerArgs = listOf("-Xjsr305=strict")
+//        jvmTarget = "17"
+//    }
+//}
+//
+//tasks.withType<Test> {
+//    useJUnitPlatform()
+//    org.jetbrains.kotlin.gradle.plugin.KotlinPlatformType.jvm
+//
+//    javaVersion = "17"
+//
+//
+//}
