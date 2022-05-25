@@ -9,13 +9,13 @@ services:
       - "5432:5432"
 
   back-end:
-    build: ../../back-end/client/.
+    build: ../.
     depends_on:
       - postgres_bd
     environment:
       PG_URL: "postgres_bd:5432"
     ports:
-      - "8081:8080"
+      - "8080:8080"
 
 
 
