@@ -33,4 +33,15 @@ abstract class AbsController<
             false
         }
     }
+
+    @GetMapping("/all")
+    fun getAll(): List<E> {
+        return repository.findAll()
+    }
+
+    @DeleteMapping("/deleteAll")
+    fun getAll(@RequestBody() listId: List<Long>) {
+        return repository.deleteAllById(listId);
+    }
+
 }
