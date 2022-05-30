@@ -1,9 +1,8 @@
 package ru.nino.client.repository
 
 import org.springframework.stereotype.Repository
-import ru.nino.client.entity.Point
+import ru.nino.client.entity.Dish
 
 @Repository
-interface PointRepository : AbsRepository<Point> {
-
+interface DishRepository : AbsRepository<Dish> {
 }
