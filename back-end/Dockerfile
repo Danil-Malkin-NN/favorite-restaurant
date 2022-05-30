@@ -8,4 +8,5 @@ RUN gradle build
 FROM openjdk:17-jdk-alpine
 RUN mkdir /app
 COPY --from=build /home/gradle/src/client/build/libs/client.app-0.0.1.jar /app/app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+RUN ls
+ENTRYPOINT ["java","-jar","app/app.jar"]

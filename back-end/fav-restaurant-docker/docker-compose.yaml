@@ -9,7 +9,7 @@ services:
       - "5432:5432"
 
   back-end:
-    build: ../../back-end/client/.
+    build: ../.
     depends_on:
       - postgres_bd
     environment:

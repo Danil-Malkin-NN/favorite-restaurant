@@ -14,8 +14,6 @@ abstract class AbsController<
     private val repository: R
 ) {
 
-    abstract fun test(): E
-
     @GetMapping
     fun getE(@RequestParam id: Long): E {
         return repository.getById(id)
