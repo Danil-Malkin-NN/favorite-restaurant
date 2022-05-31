@@ -7,9 +7,9 @@ data class EatingPoint(
     var name: String = "",
     var mark: Float = 0.0F,
     var deskription: String = "",
-    @OneToOne(orphanRemoval = true)
+    @OneToOne(orphanRemoval = true, cascade = [CascadeType.ALL])
     var address: Address = Address.NONE,
-    @OneToOne
+    @OneToOne(cascade = [CascadeType.ALL])
     var bestDish: Dish = Dish.NONE,
 
 
