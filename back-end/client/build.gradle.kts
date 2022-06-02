@@ -39,7 +39,11 @@ dependencies {
     implementation("org.springdoc:springdoc-openapi-ui:1.6.8")
     implementation("org.springdoc:springdoc-openapi-kotlin:1.6.8")
 
+//    GraphQL
+    implementation("com.graphql-java-kickstart:graphql-spring-boot-starter:12.0.0")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("com.graphql-java-kickstart:graphql-spring-boot-starter-test:12.0.0")
 
 }
 

@@ -1,3 +1,4 @@
+
 spring:
   jpa:
     database: POSTGRESQL
@@ -8,3 +9,5 @@ spring:
     url: jdbc:postgresql://${PG_URL:localhost:5432}/postgres
     username: ${PG_USER:postgres}
     password: ${PG_PASSWORD:postgres}
+server:
+  port: 8090
