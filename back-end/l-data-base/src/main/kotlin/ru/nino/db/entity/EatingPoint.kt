@@ -1,4 +1,4 @@
-package ru.nino.client.entity
+package ru.nino.db.entity
 
 import javax.persistence.*
 
@@ -6,7 +6,7 @@ import javax.persistence.*
 data class EatingPoint(
     var name: String = "",
     var mark: Float = 0.0F,
-    var deskription: String = "",
+    var description: String = "",
     @OneToOne(orphanRemoval = true, cascade = [CascadeType.ALL])
     var address: Address = Address.NONE,
     @OneToOne(cascade = [CascadeType.ALL])
@@ -15,5 +15,8 @@ data class EatingPoint(
 
     ) : AbsId() {
 
+    companion object Empty {
+        val NONE: EatingPoint = EatingPoint()
+    }
 
 }

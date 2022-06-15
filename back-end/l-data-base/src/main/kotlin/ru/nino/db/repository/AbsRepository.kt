@@ -1,8 +1,8 @@
-package ru.nino.client.repository
+package ru.nino.db.repository
 
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.repository.NoRepositoryBean
-import ru.nino.client.entity.AbsId
+import ru.nino.db.entity.AbsId
 
 @NoRepositoryBean
 public interface AbsRepository<T : AbsId>

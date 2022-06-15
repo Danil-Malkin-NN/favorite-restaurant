@@ -1,4 +1,4 @@
-package ru.nino.client
+package ru.nino.db
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

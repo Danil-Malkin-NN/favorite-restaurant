@@ -1,4 +1,4 @@
-package ru.nino.client.entity
+package ru.nino.db.entity
 
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType

@@ -12,6 +12,8 @@ plugins {
 
 java.sourceCompatibility = JavaVersion.VERSION_17
 java.targetCompatibility = JavaVersion.VERSION_17
+group = "ru.nino"
+version = "0.0.1"
 
 repositories {
     mavenCentral()
@@ -38,6 +40,7 @@ dependencies {
     implementation("org.springdoc:springdoc-openapi-data-rest:1.6.8")
     implementation("org.springdoc:springdoc-openapi-ui:1.6.8")
     implementation("org.springdoc:springdoc-openapi-kotlin:1.6.8")
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
 
 //    GraphQL
     implementation("com.graphql-java-kickstart:graphql-spring-boot-starter:12.0.0")

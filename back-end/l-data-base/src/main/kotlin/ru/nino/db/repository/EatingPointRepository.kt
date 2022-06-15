@@ -1,7 +1,7 @@
-package ru.nino.client.repository
+package ru.nino.db.repository
 
 import org.springframework.stereotype.Repository
-import ru.nino.client.entity.EatingPoint
+import ru.nino.db.entity.EatingPoint
 
 @Repository
 interface EatingPointRepository : AbsRepository<EatingPoint> {

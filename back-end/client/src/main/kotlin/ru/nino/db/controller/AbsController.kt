@@ -1,12 +1,12 @@
-package ru.nino.client.controller
+package ru.nino.db.controller
 
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestParam
-import ru.nino.client.entity.AbsId
-import ru.nino.client.repository.AbsRepository
+import ru.nino.db.entity.AbsId
+import ru.nino.db.repository.AbsRepository
 
 abstract class AbsController<
         E : AbsId,
