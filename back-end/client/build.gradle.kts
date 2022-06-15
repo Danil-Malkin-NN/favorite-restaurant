@@ -37,9 +37,9 @@ dependencies {
     implementation("org.postgresql:postgresql:42.3.5")
 
 //    swagger
-    implementation("org.springdoc:springdoc-openapi-data-rest:1.6.8")
-    implementation("org.springdoc:springdoc-openapi-ui:1.6.8")
-    implementation("org.springdoc:springdoc-openapi-kotlin:1.6.8")
+    implementation("org.springdoc:springdoc-openapi-data-rest:1.6.9")
+    implementation("org.springdoc:springdoc-openapi-ui:1.6.9")
+    implementation("org.springdoc:springdoc-openapi-kotlin:1.6.9")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
 
 //    GraphQL
