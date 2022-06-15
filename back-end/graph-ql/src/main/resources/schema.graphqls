@@ -1,0 +1,36 @@
+schema {
+    query: EntryPoint
+}
+
+type EntryPoint{
+    eatingPointById(id: Int): EatingPoint
+}
+
+type EatingPoint{
+    id: Int
+    name: String
+    mark: Float
+    description: String
+    address: Address
+    bestDish: Dish
+}
+
+type Address{
+    id: Int
+    street: String
+    houseNumber: Int
+    cityName: String
+    corpus: String
+    pointX: String
+    pointY: String
+
+}
+
+type Dish{
+    id: Int
+    name: String
+    cost: Float
+    description: String
+    marks: Float
+
+}
