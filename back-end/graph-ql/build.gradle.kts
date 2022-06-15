@@ -8,22 +8,38 @@ plugins {
 }
 
 java.sourceCompatibility = JavaVersion.VERSION_17
+java.targetCompatibility = JavaVersion.VERSION_17
+group = "ru.nino"
+version = "0.0.1"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-graphql")
+
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.springframework.boot:spring-boot-starter-webflux")
+
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
+    implementation("org.springframework.boot:spring-boot-starter-webflux")
+    implementation("com.expediagroup", "graphql-kotlin-spring-server", "5.5.0")
+
+
+//    implementation("com.graphql-java:graphql-java:18.0")
+//    implementation("com.graphql-java-kickstart:graphql-spring-boot-starter:12.0.0")
+//    implementation("com.graphql-java-kickstart:graphql-java-tools:12.1.0")
+
 
     implementation(project(":l-data-base"))
+    implementation("org.postgresql:postgresql:42.3.6")
+
 
     testImplementation("org.springframework:spring-webflux")
-
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
+//    testImplementation("com.graphql-java-kickstart:graphql-spring-boot-starter-test:12.0.0")
     testImplementation("org.springframework.graphql:spring-graphql-test")
 }
 
