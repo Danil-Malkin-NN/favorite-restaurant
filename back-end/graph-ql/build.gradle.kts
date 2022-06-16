@@ -47,6 +47,8 @@ dependencies {
     testImplementation("org.springframework:spring-webflux")
 //    testImplementation("com.graphql-java-kickstart:graphql-spring-boot-starter-test:12.0.0")
     testImplementation("org.springframework.graphql:spring-graphql-test")
+    implementation("org.springframework.boot:spring-boot-starter-test")
+
 }
 
 tasks.withType<KotlinCompile> {
